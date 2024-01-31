@@ -22,43 +22,44 @@ h1 {
 }
 
 .header-div {
-  color: #7d7c83;
-  line-height: 1.7em;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.left {
-  flex: 30;
-  padding: 20px;
-  flex-direction: column;
-  flex-grow: 1;
-  border-radius: 0 0 14px 14px;
-}
-
-.right {
-  flex: 70;
-  padding: 20px;
-  flex-direction: column;
-  flex-grow: 1;
-  border-radius: 0 0 14px 14px;
-}
-
-.palette {
+    color: #7d7c83;
+    line-height: 1.7em;
+    font-size: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
   }
   
-
-.color-box {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #000;
-  cursor: pointer;
-}
-
+  .left {
+    flex: 30;
+    padding: 20px;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: 0 0 14px 14px;
+  }
+  
+  .right {
+    flex: 70;
+    padding: 20px;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: 0 0 14px 14px;
+  }
+  
+  .palette {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+  
+  .color-box {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  
+ 
