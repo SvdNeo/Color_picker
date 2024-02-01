@@ -23,12 +23,15 @@ let palette = [];
 
 const eyeDropper = new EyeDropper();
 
+  
+  // Function to randomly position a circle within the boundaries of the image container
+  
 addBtn.addEventListener('click', async () => {
     if (palette.length >= 10) {
       addBtn.disabled = true;
       return;
     }
-  
+
     const { sRGBHex } = await eyeDropper.open();
     palette.push(sRGBHex);
     const swatch = document.createElement('div');
