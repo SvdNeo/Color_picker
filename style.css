@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -22,67 +22,60 @@ h1 {
 }
 
 .header-div {
-    color: #7d7c83;
-    line-height: 1.7em;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .left {
-    flex: 30;
-    padding: 20px;
-    flex-direction: column;
-    flex-grow: 1;
-    border-radius: 0 0 14px 14px;
-  }
-  
-  .right {
-    flex: 70;
-    padding: 20px;
-    flex-direction: column;
-    flex-grow: 1;
-    border-radius: 0 0 14px 14px;
-  }
-  
-  .palette {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    
-  
-  .color-box {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #000;
-    cursor: pointer;
-  }
-  
-  .image-container {
-    width: 100%; /* Adjusted to 100% */
-    height: auto;
-  }
-  
-  .button-container {
-      display: flex;
-      flex-direction: column; /* Stack buttons vertically */
-      align-items: center; /* Center buttons horizontally */
-      width: 100%; /* Extend width to match the container */
-      margin-top: 200px; /* Adjusted margin */
-    }
-    
-    .button-container button {
-      width: 80%; /* Adjusted button width */
-      margin-bottom: 5px; /* Adjusted margin */
-    }
-  .button-row {
-      margin-top: 10px; /* Adjusted margin */
-    }
-    
-    .button-row button {
-      margin: 5px; /* Adjusted margin */
-    }
+  color: #7d7c83;
+  line-height: 1.7em;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.left,
+.right {
+  flex: 1; /* Set both left and right containers to equal width */
+  padding: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 0 0 14px 14px;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.color-box {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 200px;
+}
+
+.button-container button {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+.button-row {
+  margin-top: 10px;
+}
+
+.button-row button {
+  margin: 5px;
+}
