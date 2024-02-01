@@ -21,7 +21,8 @@ body {
 .dynamic-container {
   width: 300px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid gray;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -131,8 +132,5 @@ h1 {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-.draggable-circle {
-  cursor: move;
 }
 

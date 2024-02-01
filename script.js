@@ -24,8 +24,6 @@ let palette = [];
 const eyeDropper = new EyeDropper();
 
   
-  // Function to randomly position a circle within the boundaries of the image container
-  
 addBtn.addEventListener('click', async () => {
     if (palette.length >= 10) {
       addBtn.disabled = true;
@@ -38,7 +36,8 @@ addBtn.addEventListener('click', async () => {
     swatch.classList.add('color-swatch');
     swatch.style.backgroundColor = sRGBHex;
     paletteContainer.appendChild(swatch);
-    
+    const currentSize = parseInt(circle.style.width);
+    setCircleSize(currentSize + 5)
     if(palette.length < 10) {
       addBtn.disabled = false;
     }
