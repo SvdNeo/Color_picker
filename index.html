@@ -18,8 +18,8 @@
                 <p>Palette</p>
                 <div class="dynamic-container"></div>
                 <div class="button-container-first">
-                    <button id="addColor">+</button>
-                    <button id="removeColor">-</button>
+                    <button id="add">+</button>
+                    <button id="remove">-</button>
                 </div>
             </div>
             
@@ -34,6 +34,15 @@
             <img src="default_image.jpg" alt="Uploaded Image" id="uploadedImage" class="image-container">
         </div>
     </div>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Export Palette</h2>
+          <div id="csvFormat"></div>
+          <div id="withHashFormat"></div>
+          <div id="arrayFormat"></div>
+        </div>
+      </div>
     <script src="script.js"></script>
 </body>
 </html>
