@@ -36,8 +36,7 @@ addBtn.addEventListener('click', async () => {
     swatch.classList.add('color-swatch');
     swatch.style.backgroundColor = sRGBHex;
     paletteContainer.appendChild(swatch);
-    const currentSize = parseInt(circle.style.width);
-    setCircleSize(currentSize + 5)
+    
     if(palette.length < 10) {
       addBtn.disabled = false;
     }
