@@ -37,7 +37,7 @@ addBtn.addEventListener('click', async () => {
     swatch.style.backgroundColor = sRGBHex;
     paletteContainer.appendChild(swatch);
     
-    if(palette.length < 10) {
+    if(palette.length <= 10) {
       addBtn.disabled = false;
     }
 });
