@@ -58,3 +58,45 @@
   border-radius: 25%;
 }
 
+#canvasContainer {
+  position: relative;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+#imageCanvas {
+  display: block;
+}
+
+.colorPicker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform 0.3s;
+}
+
+.activePicker {
+  transform: scale(1.6);
+}
+
+#browseImage {
+  width: 50%;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-left: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+#browseImage:hover {
+  background-color: #0056b3;
+}
