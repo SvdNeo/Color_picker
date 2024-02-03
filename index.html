@@ -1,53 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Picker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Image Picker</h1>
-        <div class="header-div">Extract beautiful palettes from your photos.</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Picker App</title>
+  </head>
+  <body>
+    <header style="text-align: center">
+      <h1>Image Picker</h1>
     </header>
-    
-    <div class="container">
-        <div class="left">
-            <div class="palette">
-                <p>Palette</p>
-                <div class="palette-controls">
-                    <div class="dynamic-container"></div>
-                    <div class="button-container-first">
-                        <button id="add">+</button>
-                        <button id="remove">-</button>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <br>
-            <div class="button-container">
-                <button id="browseImage">Browse Image</button>
-                <br>
-                <button id="exportPalette">Export Palette</button>
-            </div>
-        </div>
-        <div class="right">
-            
-            <img src="default_image.jpg" alt="Uploaded Image" id="uploadedImage" class="image-container">
-        </div>
-    </div>
-    <div class="modal" id="myModal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Export Palette</h2>
-          <div id="csvFormat"></div>
-          <div id="withHashFormat"></div>
-          <div id="arrayFormat"></div>
+   
+    <div id="container">
+      <div id="leftDiv">
+      <div class="left-top">
+        <div id="colorPalette"></div>
+        <div id="buttons">
+          <button class="add" id="addColorPickerButton" onclick="addColorPicker()">
+            +
+          </button>
+          <button class="remove" id="removeColorPickerButton" onclick="removeColorPicker()">
+            -
+          </button>
         </div>
       </div>
-    <script src="script.js"></script>
-    <!-- <script src="test.js"></script> -->
-</body>
-</html>
+        <label for="imageInput" id="browseImage">Browse Image</label>
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          style="display: none"
+        />
+        <button class="export" onclick="exportPalette()">Export Palette</button>
+      </div>
+
+      <div id="rightDiv">
+        <div id="canvasContainer">
+          <canvas id="imageCanvas" width="400" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+   
+      </body>
+      </html>

@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 
-.container {
+.main-container {
   display: flex;
   justify-content: center;
   margin: 0 20%;
@@ -25,7 +25,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  
 }
 
 h1 {
@@ -47,14 +46,14 @@ h1 {
   justify-content: center;
 }
 
-.left,
+/* .left,
 .right {
   flex: 1;
   padding: 20px;
   flex-direction: column;
   flex-grow: 1;
   border-radius: 0 0 14px 14px;
-}
+} */
 
 .palette {
   display: flex;
@@ -62,19 +61,22 @@ h1 {
   align-items: center;
   margin-bottom: 10px;
 }
+
 .palette-controls {
   display: flex;
   align-items: center;
 }
+
 .button-container-first {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 .button-container-first button {
-  margin-top: 5px; 
+  margin-top: 5px;
 }
+
 .color-box {
   width: 30px;
   height: 30px;
@@ -85,10 +87,34 @@ h1 {
 }
 
 .image-container {
-  position: relative; /* Important for absolute positioning of circles */
+  position: absolute; 
   width: 100%;
   height: auto;
   max-height: 400px;
+}
+
+#uploadedImage {
+  width: 25%;
+  height: auto;
+  position: absolute; /* Position the image within its container */
+  top: 50%; /* Move image to the center vertically */
+  left: 50%; /* Move image to the center horizontally */
+  transform: translate(-50%, -50%); /* Center the image */
+}
+.container {
+  display: flex;
+  justify-content: space-between; /* Add this to separate left and right */
+  margin: 0 20%;
+  border: 1px solid grey;
+  max-width: 1200px;
+  max-height: 500px;
+}
+
+.left,
+.right {
+  flex-basis: 48%; /* Set a width for each column */
+  padding: 20px;
+  border-radius: 14px;
 }
 
 .button-container {
@@ -146,8 +172,9 @@ h1 {
   text-decoration: none;
   cursor: pointer;
 }
+
 #add {
-  background-color: #9CCEC6; 
+  background-color: #9CCEC6;
   border: none;
   color: white;
   padding: 5px 10px;
@@ -160,8 +187,9 @@ h1 {
   margin-top: 5px;
   border-radius: 10%;
 }
+
 #remove {
-  background-color: red; 
+  background-color: red;
   border: none;
   color: white;
   padding: 5px 12px;
@@ -174,4 +202,12 @@ h1 {
   border-radius: 10%;
 }
 
-
+.draggable-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  /* margin: 10px; */
+  cursor: move;
+  position: relative;
+}

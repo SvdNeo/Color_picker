@@ -1,0 +1,6 @@
+creating circle on images by creating 10 divs which are relative to images
+making those circles hide/display based on selection
+making it draggable
+when add btn is clicked  1st circle is selected and it is made draggable
+circle needs to be converted to color picker(eyedropper) which picks color from the drop position
+color picked should be updated in the palette

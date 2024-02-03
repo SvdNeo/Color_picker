@@ -6,6 +6,7 @@ const paletteContainer = document.querySelector('.dynamic-container');
 const image = document.getElementById('uploadedImage');
 const exportBtn = document.getElementById('exportPalette');
 
+let eyeDropper; 
 browseBtn.addEventListener('click', () => {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -21,10 +22,40 @@ browseBtn.addEventListener('click', () => {
 
 let palette = [];
 
-const eyeDropper = new EyeDropper();
+uploadedImage.addEventListener('mouseover', () => {
+  if (eyeDropper) {
+      eyeDropper.enable();
+  }
+});
 
-  
+uploadedImage.addEventListener('mouseout', () => {
+  if (eyeDropper) {
+      eyeDropper.disable();
+  }
+});
+const circles = document.querySelectorAll('.draggable-circle');
+
+circles.forEach(circle => {
+  circle.addEventListener('dragstart', (event) => {
+    circle.style.opacity = '0.5'; // make it translucent while dragging
+  });
+
+  circle.addEventListener('dragend', (event) => {
+    circle.style.opacity = '1'; // restore opacity when dragging ends
+  });
+});
+
+
+
+uploadedImage.onload = () => {
+    eyeDropper = new EyeDropper({
+        image: uploadedImage, 
+    });
+};
+
 addBtn.addEventListener('click', async () => {
+    if (!eyeDropper) return; 
+
     if (palette.length >= 10) {
       addBtn.disabled = true;
       return;
