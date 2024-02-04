@@ -11,9 +11,8 @@ let initialLoad = true;
 defaultImg.onload = function() {
   imageCanvas.getContext("2d").drawImage(defaultImg, 0, 0, imageCanvas.width, imageCanvas.height);
   if (initialLoad) {
-    addColorPicker();
-    addColorPicker();
-    initialLoad = false; 
+    addDefaultColorPickers()
+        initialLoad = false; 
   }
 }
 
@@ -22,28 +21,40 @@ defaultImg.crossOrigin = "Anonymous";
 
 function handleImageUpload(event) {
   const file = event.target.files[0];
-
   if (file) {
     const reader = new FileReader();
-
     reader.onload = function (e) {
       const img = new Image();
-
       img.onload = function () {
         imageCanvas
           .getContext("2d")
           .drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
-
-   
+        resetColorPickers();
+        addDefaultColorPickers();
         updateColorPickersAndPalette();
       };
-
       img.src = e.target.result;
     };
-
     reader.readAsDataURL(file);
   }
 }
+
+function resetColorPickers() {
+ 
+  colorPickers.forEach(picker => picker.remove());
+
+ 
+  colorPickers = [];
+  hexValues = [];
+}
+
+function addDefaultColorPickers() {
+ 
+  for (let i = 0; i < 5; i++) {
+    addColorPicker();
+  }
+}
+
 function updateColorPickersAndPalette() {
 
   colorPickers.forEach((colorPicker) => {
