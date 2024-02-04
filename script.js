@@ -111,3 +111,23 @@ function startDrag(event) {
   document.addEventListener("mousemove", handleDragMove);
   document.addEventListener("mouseup", handleDragEnd);
 }
+function updateColorPalette() {
+  colorPaletteContainer.innerHTML = "";
+  hexValues = [];
+  hexValues.forEach((color) => {
+    const colorDiv = document.createElement("div");
+    colorDiv.style.backgroundColor = color;
+    colorPaletteContainer.appendChild(colorDiv);
+  });
+  colorPickers.forEach((colorPicker) => {
+    const color = getColorAtPosition(
+      colorPicker.style.left,
+      colorPicker.style.top
+    );
+    const colorDiv = document.createElement("div");
+    colorDiv.style.backgroundColor = color;
+    colorPaletteContainer.appendChild(colorDiv);
+    hexValues.push(color);
+  });
+  console.log(hexValues);
+}
