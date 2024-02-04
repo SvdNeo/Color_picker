@@ -28,21 +28,35 @@ function handleImageUpload(event) {
 
     reader.onload = function (e) {
       const img = new Image();
-    
 
       img.onload = function () {
         imageCanvas
           .getContext("2d")
           .drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
-             };
+
    
+        updateColorPickersAndPalette();
+      };
+
       img.src = e.target.result;
     };
 
     reader.readAsDataURL(file);
-  } 
+  }
 }
+function updateColorPickersAndPalette() {
 
+  colorPickers.forEach((colorPicker) => {
+    const color = getColorAtPosition(
+      colorPicker.style.left,
+      colorPicker.style.top
+    );
+    colorPicker.style.backgroundColor = color;
+  });
+
+
+  updateColorPalette();
+}
 
 function addColorPicker() {
   if (colorPickers.length < 10) {
