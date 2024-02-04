@@ -6,7 +6,7 @@ let hexValues = [];
 
 imageInput.addEventListener("change", handleImageUpload);
 const defaultImg = new Image();
-defaultImg.src = "/default_image.jpg";
+defaultImg.src = "./default_image.jpg";
 let initialLoad = true;
 defaultImg.onload = function() {
   imageCanvas.getContext("2d").drawImage(defaultImg, 0, 0, imageCanvas.width, imageCanvas.height);
