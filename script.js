@@ -205,4 +205,16 @@ function addActivePicker(colorPicker) {
     colorPicker.style.top
   );
   colorPicker.style.backgroundColor = color;
+  
+  // Highlight the corresponding color in the palette
+  const colorIndex = hexValues.indexOf(color);
+  const paletteColors = document.querySelectorAll("#colorPalette div");
+  paletteColors.forEach((paletteColor, index) => {
+    if (index === colorIndex) {
+      paletteColor.classList.add("activePaletteColor");
+    } else {
+      paletteColor.classList.remove("activePaletteColor");
+    }
+  });
 }
+

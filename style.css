@@ -169,3 +169,6 @@
   text-decoration: none;
   cursor: pointer;
 }
+.activePaletteColor {
+  border: 2px solid white; /* You can adjust this border style */
+}
