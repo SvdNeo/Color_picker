@@ -131,3 +131,11 @@ function updateColorPalette() {
   });
   console.log(hexValues);
 }
+function getColorAtPosition(x, y) {
+  const imageData = imageCanvas
+    .getContext("2d")
+    .getImageData(parseInt(x), parseInt(y), 1, 1).data;
+  const hexColor = rgbToHex(imageData[0], imageData[1], imageData[2]);
+  //console.log(hexColor);
+  return hexColor;
+}
