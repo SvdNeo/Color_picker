@@ -139,3 +139,58 @@ function getColorAtPosition(x, y) {
   //console.log(hexColor);
   return hexColor;
 }
+function exportPalette() {
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+  modal.style.display = "block";
+  var csvFormat = generateCSV();
+  document.getElementById("csvFormat").innerText = "CSV\n" + csvFormat;
+  var withHashFormat = generateWithHash();
+  document.getElementById("withHashFormat").innerText =
+    "With #\n" + withHashFormat;
+  var arrayFormat = generateArray();
+  document.getElementById("arrayFormat").innerText = "Array\n" + arrayFormat;
+  function generateCSV() {
+    const capitalizedPalette = hexValues.map((color) =>
+      color.toUpperCase().replace("#", "")
+    );
+    return capitalizedPalette.join(",");
+  }
+  function generateWithHash() {
+    return hexValues.map((color) => color.toUpperCase()).join(", ");
+  }
+  function generateArray() {
+    return (
+      "[" +
+      hexValues
+        .map((color) => "'" + color.toUpperCase().replace("#", "") + "'")
+        .join(", ") +
+      "]"
+    );
+  }
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function componentToHex(c) {
+  const hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function getRandomPosition() {
+  return Math.floor(Math.random() * 300);
+}
+
+function constrainValue(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
