@@ -83,3 +83,31 @@ function removeColorPicker() {
   }
 }
 
+function startDrag(event) {
+  const colorPicker = event.target;
+  addActivePicker(colorPicker);
+  const offsetX = event.clientX - parseInt(colorPicker.style.left);
+  const offsetY = event.clientY - parseInt(colorPicker.style.top);
+
+  function handleDragMove(moveEvent) {
+    const x = moveEvent.clientX - offsetX;
+    const y = moveEvent.clientY - offsetY;
+    const colorPickerLeft =
+      constrainValue(x, 0, imageCanvas.width - colorPicker.offsetWidth) + "px";
+    const colorPickerTop =
+      constrainValue(y, 0, imageCanvas.height - colorPicker.offsetHeight) +
+      "px";
+    const color = getColorAtPosition(colorPickerLeft, colorPickerTop);
+    colorPicker.style.left = colorPickerLeft;
+    colorPicker.style.top = colorPickerTop;
+    colorPicker.style.backgroundColor = color;
+    updateColorPalette();
+  }
+  function handleDragEnd() {
+    document.removeEventListener("mousemove", handleDragMove);
+    document.removeEventListener("mouseup", handleDragEnd);
+  }
+
+  document.addEventListener("mousemove", handleDragMove);
+  document.addEventListener("mouseup", handleDragEnd);
+}
