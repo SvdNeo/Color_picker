@@ -194,3 +194,15 @@ function constrainValue(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+function addActivePicker(colorPicker) {
+  const pickers = document.querySelectorAll(".colorPicker");
+  pickers.forEach((picker) => {
+    picker.classList.remove("activePicker");
+  });
+  colorPicker.classList.add("activePicker");
+  const color = getColorAtPosition(
+    colorPicker.style.left,
+    colorPicker.style.top
+  );
+  colorPicker.style.backgroundColor = color;
+}
